@@ -1,0 +1,125 @@
+/* 모든 요소에 기본 여백 제거 및 박스 모델 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/* 전체 페이지 폰트 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* 헤더 스타일: 배경색, 내부 여백, 수평 정렬 */
+header {
+    display: flex;
+    justify-content: space-between;
+    /* 로고, 네비게이션, 로그인 영역을 양쪽 끝에 배치 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    padding: 20px;
+    /* 상하좌우 내부 여백 */
+    background-color: #fff;
+    /* 헤더 배경색 */
+}
+
+/*  */
+/* 로고 이미지 크기 조정 */
+.logo img {
+    width: 150px;
+    /* 로고 이미지 너비 */
+}
+
+/* 네비게이션 영역 설정 */
+nav {
+    flex-grow: 1;
+    /* 공간을 최대한으로 확장 */
+    margin-left: 30px;
+    /* 로고와의 간격 */
+}
+
+/* 네비게이션 링크 목록 스타일 */
+.nav-links {
+    list-style: none;
+    /* 기본 목록 스타일 제거 */
+    display: flex;
+    /* 가로로 정렬 */
+    align-items: center;
+    /* 요소 수직 중앙 정렬 */
+    gap: 40px;
+    /* 각 링크 간격 */
+}
+
+/* 네비게이션 링크 스타일 */
+.nav-links a {
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: #333;
+    /* 기본 텍스트 색상 */
+}
+
+/* 네비게이션 링크 호버 시 색상 변경 */
+.nav-links a:hover {
+    color: #8Da7be;
+    /* 링크에 마우스를 올렸을 때 색상 */
+}
+
+/* 검색 및 로그인/회원가입 버튼 영역 설정 */
+.search-login {
+    display: flex;
+    /* 가로로 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    gap: 25px;
+    /* 버튼 간 간격 */
+}
+
+/* 검색창 스타일 */
+.search-bar {
+    padding: 7px;
+    /* 내부 여백 */
+    border: 1px solid #ccc;
+    /* 테두리 색상 및 두께 */
+    border-radius: 4px;
+    /* 모서리 둥글게 */
+    vertical-align: middle;
+    /* 수직 정렬 */
+    width: 15%;
+    /* 너비를 네비게이션 영역의 50%로 설정 */
+}
+
+/* 로그인 및 회원가입 버튼 스타일 */
+.login-btn,
+.signup-btn {
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: #333;
+    /* 텍스트 색상 */
+    padding: 8px 12px;
+    /* 내부 여백 */
+    border-radius: 4px;
+    /* 모서리 둥글게 */
+}
+
+/* 로그인 버튼 색상 */
+.login-btn {
+    background-color: #fff;
+    /* 로그인 버튼 배경색 */
+}
+
+/* 회원가입 버튼 색상 */
+.signup-btn {
+    background-color: #fff;
+    /* 회원가입 버튼 배경색 */
+}
+
+
+/* 로그인 및 회원가입 버튼에 마우스를 올렸을 때 효과 */
+.login-btn:hover,
+.signup-btn:hover {
+    opacity: 0.9;
+    /* 살짝 어둡게 표시 */
+}

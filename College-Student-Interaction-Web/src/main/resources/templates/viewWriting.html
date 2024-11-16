@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/viewWriting_style.css">
+    <title>profile</title>
+</head>
+
+<body>
+    <div id="navigation">
+        <iframe src="/navigation.html" style="width:100%; height:auto; border:none;"></iframe>
+    </div>
+    <main>
+        <section class="content">
+            <article class="profileContainer">
+                <img src="profile.png" style="height: 100px; width: 100px; margin-left: 10px;" />
+                <form class="profileForm">
+                    <div class="formField">
+                        <p>아이디</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formId" placeholder="DB에 저장된 아이디" required>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <p>나이</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formAge" placeholder="DB에 저장된 나이" required>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <p>닉네임</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formNickname" placeholder="DB에 저장된 닉네임" required>
+                            <span></span>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+
+                <div class="text-box">
+                    <button class="button button-left" onclick="changeText(-1)">&lt</button>
+                    <span id="text">Q & A</span>
+                    <button class="button button-right" onclick="changeText(1)">&gt</button>
+                </div>
+
+                <script>
+                    const texts = [
+                        "Q & A",
+                        "공모전 모집",
+                        "자격증 추천",
+                        "고민상담"
+                    ];
+                    let currentIndex = 0;
+            
+                    function changeText(direction) {
+                        currentIndex = (currentIndex + direction + texts.length) % texts.length; // 방향에 따라 인덱스 변경
+                        document.getElementById("text").textContent = texts[currentIndex]; // 글자 변경
+                    }
+                </script>
+
+                <div id="postLinks"></div> <!-- 링크를 삽입할 div -->
+
+                <script>
+                    var postLinksContainer = document.getElementById('postLinks'); 
+                    for (var i = 0; i < 100; i++) {
+                        var linkContainer = document.createElement('div'); // 새로운 div 요소 생성
+                        linkContainer.className = 'linkBox'; // 스타일을 적용할 클래스 추가
+
+                        var link = document.createElement('a'); // 새로운 a 요소 생성
+                        link.href = "#"; // 링크 href 설정
+                        link.textContent = "작성글 " + (i + 1) + "입니다."; // 링크 텍스트 설정
+
+                        linkContainer.appendChild(link); // div에 링크 추가
+                        postLinksContainer.appendChild(linkContainer); // 링크 박스를 전체 컨테이너에 추가
+                    }
+                </script>
+
+                <!--디비에 저장된 작성글을 동적으로 넣을 수 있어야 함.-->
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <!--로봇ai 아이콘 넣어둘 곳-->
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 지민이 지민이 지민이!!!!!!!!</p>
+    </footer>
+</body>
+
+</html>

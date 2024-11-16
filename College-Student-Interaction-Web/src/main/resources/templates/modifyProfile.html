@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/modifyProfile.css">
+    <title>profile</title>
+</head>
+<body>
+    <div id="navigation">
+        <iframe src="/navigation.html" style="width:100%; height:auto; border:none;"></iframe>
+    </div>
+    
+    <main>
+        <section class="content">
+            <article class="profileContainer">
+                <img src="profile.png" />
+                <form class="profileForm">
+                    <div class="formField">
+                        <p>아이디</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formId" placeholder="DB에 저장된 아이디" required>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <p>나이</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formAge" placeholder="DB에 저장된 나이" required>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="formField">
+                        <p>닉네임</p>
+                        <div class="inputContainer">
+                            <input type="text" id="formNickname" placeholder="DB에 저장된 닉네임" required>
+                            <span></span>
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+
+                <div class="portfolioContainer">
+                    <p>portfolio</p>
+                    <form class="portfolioForm">
+                        <div class="formField">
+                            <p>지역</p>
+                            <input type="text" id="formArea" placeholder="DB에 저장된 지역" />
+                        </div>
+                        <div class="formField">
+                            <p>학과</p>
+                            <input type="text" id="formChoose" placeholder="전공학과" />
+                        </div>
+                    </form>
+                </div>
+
+                <!--학생은 학과만 직장인은 직종이 필요함-->
+                <!--프로필 수정을 원할 땐 수정이 가능한 곳만 input 입력이 가능하도록 해야 함-->
+
+                <div class="awardSection">
+                    <p>자격증 및 수상내역</p>
+                    <table id="awardDetails">
+                        <tr style="background-color: lightgray;">
+                            <th>수상일자</th>
+                            <th>수상내역</th>
+                            <th>개최기간</th>
+                        </tr>
+                        <!-- 디비에 저장된 갯수만큼 테이블이 동적으로 만들어지도록 해야 함. -->
+                    </table>
+                </div>
+
+                <script>
+                    var postLinksContainer = document.getElementById('awardDetails');
+                    for (var i = 0; i < 100; i++) {
+                        // 새로운 행 생성
+                        var newRow = document.createElement('tr');
+
+                        // 예시 데이터
+                        var awardDate = `2024-11-${(i + 1).toString().padStart(2, '0')}`; // 수상일자
+                        var awardDetails = `수상내역 ${i + 1}`; // 수상내역
+                        var eventPeriod = `2024-11-${(i + 1).toString().padStart(2, '0')} ~ 2024-11-${(i + 1).toString().padStart(2, '0')}`; // 개최기간
+
+                        // 각 셀 생성
+                        var dateCell = document.createElement('td');
+                        dateCell.textContent = awardDate;
+                        newRow.appendChild(dateCell);
+
+                        var detailsCell = document.createElement('td');
+                        detailsCell.textContent = awardDetails;
+                        newRow.appendChild(detailsCell);
+
+                        var periodCell = document.createElement('td');
+                        periodCell.textContent = eventPeriod;
+                        newRow.appendChild(periodCell);
+
+                        // 새로운 행을 테이블에 추가
+                        postLinksContainer.appendChild(newRow);
+                    }
+                </script>
+                <div class="buttonContainer">
+                <input type="submit" id="submitForm" value="수정완료" />
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <!--로봇ai 아이콘 넣어둘 곳-->
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 지민이 지민이 지민이!!!!!!!!</p>
+    </footer>
+</body>
+
+</html>
